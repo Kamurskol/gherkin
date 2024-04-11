@@ -1,3 +1,4 @@
+
 Feature: Processo de Registro
   Como um novo usuário
   Eu quero ser capaz de me registrar para uma conta
@@ -10,7 +11,7 @@ Feature: Processo de Registro
     Então vejo mensagens de erro indicando informações ausentes 
     E não devo ser registrado como um usuário
 
-  
+
 Feature: Processo de Cadastro
   Como um novo usuário
   Eu quero ser capaz de me cadastrar para uma conta
@@ -19,7 +20,7 @@ Feature: Processo de Cadastro
   Scenario: Tentativa de cadastro com um curso não listado
     Dado que estou na página de cadastro
     Quando preencho todos os campos obrigatórios, incluindo um curso que não está listado
-    E clico no botão de enviar
+    E clico no botão de enviar          
     Então devo ver uma mensagem de erro indicando que o curso selecionado não está disponível
     E não devo ser cadastrado como um usuário
   
