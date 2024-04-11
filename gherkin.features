@@ -1,0 +1,38 @@
+Feature: Processo de Registro
+  Como um novo usuário
+  Eu quero ser capaz de me registrar para uma conta
+  Para que eu possa acessar o aplicativo
+
+  Scenario: Tentativa de registro sem preencher todos os campos obrigatórios
+    Dado que estou na página de registro
+    Quando preencho alguns dos campos obrigatórios
+    E clico no botão de enviar
+    Então vejo mensagens de erro indicando informações ausentes 
+    E não devo ser registrado como um usuário
+
+  
+Feature: Processo de Cadastro
+  Como um novo usuário
+  Eu quero ser capaz de me cadastrar para uma conta
+  Para que eu possa acessar o aplicativo
+  
+  Scenario: Tentativa de cadastro com um curso não listado
+    Dado que estou na página de cadastro
+    Quando preencho todos os campos obrigatórios, incluindo um curso que não está listado
+    E clico no botão de enviar
+    Então devo ver uma mensagem de erro indicando que o curso selecionado não está disponível
+    E não devo ser cadastrado como um usuário
+  
+  Scenario: Uso de um formato de e-mail inválido
+    Dado que estou na página de cadastro
+    Quando preencho todos os campos obrigatórios, incluindo um e-mail com formato inválido
+    E clico no botão de enviar
+    Então devo ver uma mensagem de erro: "Inclua um '@' no endereço de email."
+    E não devo ser cadastrado como um usuário 
+    
+  Scenario: Tentativa de cadastro com uma senha que não atende aos critérios de segurança
+    Dado que estou na página de cadastro
+    Quando preencho todos os campos obrigatórios, incluindo uma senha que não atende aos critérios de segurança
+    E clico no botão de enviar
+    Então devo ver uma mensagem de erro indicando que a senha não atende aos critérios de segurança
+    E não devo ser cadastrado como um usuário
